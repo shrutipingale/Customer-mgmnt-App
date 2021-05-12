@@ -1,0 +1,26 @@
+<%- include("_header") -%>
+
+<h1>Calculate Sum of a Series</h1>
+
+<form action="/sum" method="post">
+  <div class="form-horizontal">
+
+    <%- include("_calculation") -%>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"></label>
+      <div class="col-sm-10">
+        <input type="submit" value="Calculate Sum" class="btn btn-primary " />
+      </div>
+    </div>
+  </div>
+</form>
+<% if(type==="post" ) {
+    if(err === "1"){ %>
+      <p style="color:red;">Ending Number should be greater than the starting number.</p>
+      <% }else{ %>
+      <p>The sum of the numbers from <%=start%> to <%=end%> incremented by <%=inc%> is <%=sum%>.</p>
+  <%  }
+} %>
+
+<%- include("_footer") -%>
